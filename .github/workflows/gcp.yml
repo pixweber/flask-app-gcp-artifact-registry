@@ -55,7 +55,7 @@ jobs:
         AR_HOST: us-central1-docker.pkg.dev
       uses: google-github-actions/deploy-cloudrun@v1
       with:
-        image: ${{ env.AR_HOST }}/$PROJECT_ID/images/$IMAGE_NAME:latest
+        image: ${{env.AR_HOST}}/${{env.PROJECT_ID}}/images/${{env.IMAGE_NAME}}:latest
         service: $IMAGE_NAME
         region: us-central1
         platform: managed
