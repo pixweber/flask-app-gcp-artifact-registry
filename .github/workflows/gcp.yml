@@ -51,6 +51,8 @@ jobs:
         docker push $AR_HOST/$PROJECT_ID/images/$IMAGE_NAME:$GIT_TAG
 
     - name: Deploy to Cloud Run
+      env:
+        AR_HOST: us-central1-docker.pkg.dev
       uses: google-github-actions/deploy-cloudrun@v1
       with:
         image: $AR_HOST/$PROJECT_ID/images/$IMAGE_NAME:latest
